@@ -1,0 +1,11 @@
+.shop-name {
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  text-align: center;
+  font-size: 55px;
+  margin: 10px 0px 20px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+}

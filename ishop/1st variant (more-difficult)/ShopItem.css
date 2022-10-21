@@ -1,0 +1,10 @@
+.item-cell {
+  border: solid 1px gray;
+  text-align: center;
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+}
+
+.item-img {
+  width: 100px;
+}
