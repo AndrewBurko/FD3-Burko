@@ -1,0 +1,33 @@
+.item-cell {
+  border: solid 1px gray;
+  text-align: center;
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+}
+
+.item-img {
+  width: 100px;
+}
+
+.shop-item_selected {
+  background-color: #d4e7ef;
+}
+
+.item-dell-btn {
+  background-color: #0e88d7;
+  color: white;
+  border: solid 1px #003584;
+  border-radius: 7px;
+  height: 30px;
+  box-shadow: 1px 1px 5px #585858;
+}
+
+.item-dell-btn:hover {
+  cursor: pointer;
+  background-color: rgb(207, 32, 32);
+  border: solid 1px rgb(151, 0, 0);
+}
+
+.item-dell-btn:active {
+  box-shadow: 0px 0px 3px #585858 inset;
+}
