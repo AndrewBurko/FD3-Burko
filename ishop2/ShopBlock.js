@@ -29,15 +29,23 @@ var ShopBlock = React.createClass({
   },
 
   deleteItem: function(itemCode) {
-    confirm("Вы действительно хотите удалить данный товар?") ? this.setState({deletedItem: itemCode}, this.updateItems) : null;
+    confirm("Вы действительно хотите удалить данный товар?") ? 
+    this.setState({currentItems: this.state.currentItems.filter( v => 
+      v.itemCode !== itemCode)}) : null;
+  },
+
+  // 2-nd variant
+  /* deleteItem: function(itemCode) {
+    confirm("Вы действительно хотите удалить данный товар?") ? 
+    this.setState({deletedItem: itemCode}, this.updateItems) : null;
   },
 
   updateItems: function() {
     var arr = [];
-    this.state.currentItems.map( v => 
+    this.state.currentItems.forEach( v => 
       v.itemCode === this.state.deletedItem ? null : arr.push(v));
     this.setState({currentItems: arr});
-  },
+  }, */
 
   render: function() {
     var itemsCode = this.state.currentItems.map( v =>
