@@ -9,7 +9,6 @@ var FilterBlock = React.createClass ({
 
   getInitialState: function() {
     return {
-      startWordList: this.props.wordList,
       currentWordList: this.props.wordList,
       isSortOn: false,
       filterStr: "",
@@ -25,27 +24,24 @@ var FilterBlock = React.createClass ({
   },
 
   clearResult: function(event) {
-    this.setState({filterStr: ""});
-    this.setState({isSortOn: false}, this.getResult);
+    this.setState({filterStr: "", isSortOn: false}, this.getResult);
   },
 
   getResult: function() {
-    var arr = [];
-    this.state.startWordList.map( (v) => arr.push(v));
-
-    if (this.state.isSortOn) {
-      arr.sort( (a,b) => a.localeCompare(b));
-    };
-
-    var arrAfterSort = [];
+    var words = null;
 
     if (this.state.filterStr) {
-      arr.filter( (v) => (v.indexOf(this.state.filterStr) >= 0) ? arrAfterSort.push(v) : null);
+      words = this.props.wordList.filter( (v) => 
+      v.includes(this.state.filterStr));
     } else {
-      arr.map( (v) => arrAfterSort.push(v));
-    };
+      words = [...this.props.wordList];
+    }
 
-    this.setState({currentWordList: arrAfterSort});
+    if (this.state.isSortOn) {
+      words.sort();
+    }
+
+    this.setState({currentWordList: words});
   },
 
   render: function() {
