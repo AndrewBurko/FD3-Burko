@@ -1,0 +1,71 @@
+[
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/01f09238b0a9a3b15fe35161c9f960f2.jpeg",
+    "itemName": "iPhone 14",
+    "itemYear": 2022,
+    "itemMemory": 128,
+    "itemPrice": 2609,
+    "itemRest": 43,
+    "itemID": 1
+  },
+
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/459cfecdc542834d59dded431280e80b.jpeg",
+    "itemName": "iPhone 14 Pro",
+    "itemYear": 2022,
+    "itemMemory": 128,
+    "itemPrice": 3830,
+    "itemRest": 12,
+    "itemID": 2
+  },
+
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/70cb012da1cda1b505415e33cab03023.jpeg",
+    "itemName": "iPhone 13",
+    "itemYear": 2021,
+    "itemMemory": 128,
+    "itemPrice": 2340,
+    "itemRest": 140,
+    "itemID": 3
+  },
+
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/1e52dc24f60414c48ce851cc7b41394d.jpeg",
+    "itemName": "iPhone 13 Pro",
+    "itemYear": 2021,
+    "itemMemory": 128,
+    "itemPrice": 2970,
+    "itemRest": 56,
+    "itemID": 4
+  },
+
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/bf14a99b6b00fa25711a3e8e7a87d23a.jpeg",
+    "itemName": "iPhone 12",
+    "itemYear": 2020,
+    "itemMemory": 64,
+    "itemPrice": 1799,
+    "itemRest": 81,
+    "itemID": 5
+  },
+
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/278321bd4b2a9678955bc2be8bf2ff62.jpeg",
+    "itemName": "iPhone 12 Pro",
+    "itemYear": 2020,
+    "itemMemory": 256,
+    "itemPrice": 2883,
+    "itemRest": 55,
+    "itemID": 6
+  },
+
+  {
+    "itemImgUrl": "https://content2.onliner.by/catalog/device/main/482e7898e6fae1270ba8d067639be58b.jpeg",
+    "itemName": "iPhone 11",
+    "itemYear": 2019,
+    "itemMemory": 64,
+    "itemPrice": 1625,
+    "itemRest": 35,
+    "itemID": 7
+  }
+]
