@@ -1,0 +1,62 @@
+.item-cell {
+  border: solid 1px gray;
+  text-align: center;
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+  height: 70px;
+}
+
+.item-img {
+  width: 55px;
+}
+
+.shop-item_selected {
+  background-color: #d4e7ef;
+}
+
+.item-edit-btn,
+.item-dell-btn {
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 50%;
+  margin-left: -50px;
+  margin-bottom: 6px;
+  background-color: #1ed825;
+  color: white;
+  border: solid 1px #0c8007;
+  border-radius: 7px;
+  height: 25px;
+  box-shadow: 1px 1px 5px #585858;
+}
+
+.item-dell-btn {
+  background-color: #0e88d7;
+  border: solid 1px #003584;
+  margin-bottom: 0px;
+}
+
+.item-edit-btn:hover {
+  cursor: pointer;
+  background-color: rgb(238, 215, 8);
+  border: solid 1px rgb(186, 167, 0);
+}
+
+.item-dell-btn:hover {
+  cursor: pointer;
+  background-color: rgb(207, 32, 32);
+  border: solid 1px rgb(151, 0, 0);
+}
+
+.item-edit-btn:active,
+.item-dell-btn:active {
+  box-shadow: 0px 0px 3px #585858 inset;
+}
+
+.item-edit-btn:disabled,
+.item-dell-btn:disabled {
+  background-color: #7a7a7a4a;
+  box-shadow: none;
+  border-color: gray;
+  cursor: default;
+}
