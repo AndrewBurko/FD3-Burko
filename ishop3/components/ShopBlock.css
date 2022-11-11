@@ -1,0 +1,64 @@
+.items-table {
+  border-collapse: collapse;
+  box-shadow: 0px 0px 8px #888888;
+  background-color: #f0f0f0;
+}
+
+.shop-name {
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  text-align: center;
+  font-size: 50px;
+  margin: 0px 0px 15px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+}
+
+th {
+  border: solid 1px gray;
+  text-align: center;
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+  padding: 3px 0px;
+}
+
+.add-item-btn {
+  width: 150px;
+  margin-top: 8px;
+  height: 25px;
+  background-color: #77b9ee;
+  border-radius: 5px;
+  border: solid 1px blue;
+  color: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
+.add-item-btn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 116, 188);
+}
+
+.add-item-btn:active {
+  box-shadow: 1px 1px 5px grey inset;
+}
+
+.add-item-btn:disabled {
+  background-color: #7a7a7a4a;
+  box-shadow: none;
+  border-color: gray;
+  cursor: default;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.shop-block {
+  display: flex;
+  flex-direction: column;
+  width: 860px;
+}
