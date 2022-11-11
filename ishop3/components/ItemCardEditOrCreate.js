@@ -42,6 +42,17 @@ class ItemCardEditOrCreate extends React.Component{
     saveBtnDisabled: (this.props.workMode === 2 ? false : true),
   }
 
+  validInputs = () => {
+    if (this.state.name && this.state.year && this.state.memory && this.state.price && this.state.url && this.state.quantity &&
+      this.state.errorNameText === "" && this.state.errorYearText === "" && this.state.errorMemoryText === "" &&
+      this.state.errorPriceText === "" && this.state.errorUrlText === "" && this.state.errorQuantityText === "") {
+        this.setState({saveBtnDisabled: false});
+    }
+    else {
+      this.setState({saveBtnDisabled: true});
+    }
+  }
+
   nameChanged = (event) => {
     this.disableBtns();
 
@@ -50,12 +61,7 @@ class ItemCardEditOrCreate extends React.Component{
 
     event.target.value.length > 3 ? errorText = "" : errorText = "Заполните поле, введите название больше 3 символов!";
 
-    this.setState({errorNameText: errorText});
-
-    this.state.year && this.state.memory && this.state.price && this.state.url && this.state.quantity &&
-    this.state.errorYearText === "" && this.state.errorMemoryText === "" && this.state.errorPriceText === "" &&
-    this.state.errorUrlText === "" && this.state.errorQuantityText === "" && errorText === "" ?
-    this.setState({saveBtnDisabled: false}) : this.setState({saveBtnDisabled: true});
+    this.setState({errorNameText: errorText}, this.validInputs);
   }
 
   yearChanged = (event) => {
@@ -64,15 +70,13 @@ class ItemCardEditOrCreate extends React.Component{
     this.setState({year: event.target.value});
     let errorText;
 
-    event.target.value % 1 === 0 && event.target.value >= 2010 && event.target.value <= new Date().getFullYear() ?
-    errorText = "" : errorText = "Заполните поле, введите год от 2010 и до текущего!";
+    if (event.target.value % 1 === 0 && event.target.value >= 2010 && event.target.value <= new Date().getFullYear()) {
+      errorText = "";
+    } else {
+      errorText = "Заполните поле, введите год от 2010 и до текущего!";
+    }
 
-    this.setState({errorYearText: errorText});
-
-    this.state.name && this.state.memory && this.state.price && this.state.url && this.state.quantity &&
-    this.state.errorNameText === "" && this.state.errorMemoryText === "" && this.state.errorPriceText === "" &&
-    this.state.errorUrlText === "" && this.state.errorQuantityText === "" && errorText === "" ?
-    this.setState({saveBtnDisabled: false}) : this.setState({saveBtnDisabled: true});
+    this.setState({errorYearText: errorText}, this.validInputs);
   }
 
   memoryChanged = (event) => {
@@ -83,12 +87,7 @@ class ItemCardEditOrCreate extends React.Component{
 
     event.target.value > 0 ? errorText = "" : errorText = "Заполните поле, введите число больше 0!";
 
-    this.setState({errorMemoryText: errorText});
-
-    this.state.name && this.state.year && this.state.price && this.state.url && this.state.quantity &&
-    this.state.errorNameText === "" && this.state.errorYearText === "" && this.state.errorPriceText === "" &&
-    this.state.errorUrlText === "" && this.state.errorQuantityText === "" && errorText === "" ?
-    this.setState({saveBtnDisabled: false}) : this.setState({saveBtnDisabled: true});
+    this.setState({errorMemoryText: errorText}, this.validInputs);
   }
 
   priceChanged = (event) => {
@@ -99,12 +98,7 @@ class ItemCardEditOrCreate extends React.Component{
 
     event.target.value > 0 ? errorText = "" : errorText = "Заполните поле, введите число больше 0!";
 
-    this.setState({errorPriceText: errorText});
-
-    this.state.name && this.state.year && this.state.memory && this.state.url && this.state.quantity &&
-    this.state.errorNameText === "" && this.state.errorYearText === "" && this.state.errorMemoryText === "" &&
-    this.state.errorUrlText === "" && this.state.errorQuantityText === "" && errorText === "" ?
-    this.setState({saveBtnDisabled: false}) : this.setState({saveBtnDisabled: true});
+    this.setState({errorPriceText: errorText}, this.validInputs);
   }
 
   urlChanged = (event) => {
@@ -116,12 +110,7 @@ class ItemCardEditOrCreate extends React.Component{
 
     regUrl.test(event.target.value) ? errorText = "" : errorText = "Заполните поле, введите корректный URL!";
 
-    this.setState({errorUrlText: errorText});
-
-    this.state.name && this.state.year && this.state.memory && this.state.price && this.state.quantity &&
-    this.state.errorNameText === "" && this.state.errorYearText === "" && this.state.errorMemoryText === "" &&
-    this.state.errorPriceText === "" && this.state.errorQuantityText === "" && errorText === "" ?
-    this.setState({saveBtnDisabled: false}) : this.setState({saveBtnDisabled: true});
+    this.setState({errorUrlText: errorText}, this.validInputs);
   }
 
   quantityChanged = (event) => {
@@ -130,18 +119,20 @@ class ItemCardEditOrCreate extends React.Component{
     this.setState({quantity: event.target.value});
     let errorText;
 
-    event.target.value > 0 && event.target.value % 1 === 0 ? errorText = "" : errorText = "Заполните поле, введите целое число больше 0!";
+    if(event.target.value > 0 && event.target.value % 1 === 0) {
+      errorText = "";
+    } else {
+      errorText = "Заполните поле, введите целое число больше 0!";
+    }
 
-    this.setState({errorQuantityText: errorText});
-
-    this.state.name && this.state.year && this.state.memory && this.state.price && this.state.url &&
-    this.state.errorNameText === "" && this.state.errorYearText === "" && this.state.errorMemoryText === "" &&
-    this.state.errorPriceText === "" && this.state.errorUrlText === "" && errorText === "" ?
-    this.setState({saveBtnDisabled: false}) : this.setState({saveBtnDisabled: true});
+    this.setState({errorQuantityText: errorText}, this.validInputs);
   }
 
   disableBtns = () => {
-    this.state.itemCardChanged ? null : (this.setState({itemCardChanged: true}), this.props.cbUpdateBtns(true));
+    if (!this.state.itemCardChanged) {
+      this.setState({itemCardChanged: true});
+      this.props.cbUpdateBtns(true);
+    }
   }
 
   cancelChanges = () => {

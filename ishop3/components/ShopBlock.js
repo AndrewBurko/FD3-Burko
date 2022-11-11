@@ -37,56 +37,51 @@ class ShopBlock extends React.Component{
   };
 
   selectItem = (id) => {
-    this.state.itemCardChanged ?
-    null
-    :
-    (this.state.currentItems.forEach( v =>
-      v.itemID === id ? this.setState({selectedItem: v, selectedItemID: id}) : null),
-    this.setState({workMode: 1}));
+    if (!this.state.itemCardChanged) {
+      const selectedItem = this.state.currentItems.find( v => v.itemID === id);
+      this.setState({selectedItem: selectedItem, selectedItemID: id, workMode: 1});
+    }
   };
 
   deleteItem = (id) => {
-    confirm("Вы действительно хотите удалить данный товар?")
-    ? 
-    this.setState({currentItems: this.state.currentItems.filter( v => v.itemID !== id), selectedItem: null, selectedItemID: null,
-    workMode: 0})
-    :
-    null;
+    if (confirm("Вы действительно хотите удалить данный товар?")) {
+      this.setState({currentItems: this.state.currentItems.filter( v => 
+        v.itemID !== id), selectedItem: null, selectedItemID: null, workMode: 0});
+    }
   };
 
   editItem = () => {
     this.setState({workMode: 2});
-  }
+  };
 
   updateBtns = (v) => {
     this.setState({itemCardChanged: v});
-  }
+  };
 
   cancelChanges = () => {
     this.setState({workMode: 0, itemCardChanged: false, selectItem: null, selectedItemID: null});
-  }
+  };
 
   saveItem = (obj) => {
-    this.state.workMode === 2
-    ?
-    this.state.currentItems.map( v =>
-      v.itemID === obj.itemID ? (
-        v.itemImgUrl = obj.itemImgUrl,
-        v.itemName = obj.itemName,
-        v.itemYear = obj.itemYear,
-        v.itemMemory = obj.itemMemory,
-        v.itemPrice = obj.itemPrice,
-        v.itemRest = obj.itemRest
-      ) : null)
-      :
+    if (this.state.workMode === 2) {
+      const currentItem = this.state.currentItems.find( v => v.itemID === obj.itemID);
+      currentItem.itemImgUrl = obj.itemImgUrl;
+      currentItem.itemName = obj.itemName;
+      currentItem.itemYear = obj.itemYear;
+      currentItem.itemMemory = obj.itemMemory;
+      currentItem.itemPrice = obj.itemPrice;
+      currentItem.itemRest = obj.itemRest;
+    }
+    else {
       this.state.currentItems.push(obj);
+    }
     this.setState({workMode: 0, itemCardChanged: false});
-  }
+  };
 
   addNewItem = () => {
     this.setState({workMode: 3, selectedItem: null, selectedItemID: null, itemCardChanged: true,
       newItemID: this.state.currentItems[this.state.currentItems.length-1].itemID+1});
-  }
+  };
 
   render() {
     const itemsCode = this.state.currentItems.map( v =>

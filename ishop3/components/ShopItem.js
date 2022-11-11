@@ -23,7 +23,9 @@ class ShopItem extends React.Component{
   };
 
   selectItem = (event) => {
-    event.target.className === "item-dell-btn" ? null : this.props.cbSelectItem(Number(event.currentTarget.dataset.itemcode));
+    if (event.target.className !== "item-dell-btn") {
+      this.props.cbSelectItem(Number(event.currentTarget.dataset.itemcode));
+    }
   };
 
   deleteItem = (event) => {
