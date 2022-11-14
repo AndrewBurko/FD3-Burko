@@ -2,7 +2,6 @@ import React from "react";
 import RainbowFrame from "./RainbowFrame";
 
 class RainbowFrameApp extends React.Component{
-  displayName = "RainbowFrameApp";
 
   colors = ['red','orange', 'yellow','green', '#00BFFF', 'blue', 'purple'];
 

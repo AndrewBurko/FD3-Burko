@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./RainbowFrame.css";
 
 class RainbowFrame extends React.Component{
-  displayName = "RainbowFrame";
 
   static propTypes = {
     colors: PropTypes.array.isRequired,
