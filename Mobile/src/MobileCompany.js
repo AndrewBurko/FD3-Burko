@@ -105,10 +105,8 @@ class MobileCompany extends React.PureComponent{
         index = i;
       }
     });
-    const newClientsArr = [
-      ...this.state.clients.slice(0, index),
-      ...this.state.clients.slice(index+1)
-    ];
+    const newClientsArr = this.state.clients.slice();
+    newClientsArr.splice(index, 1);
     this.setState({clients: newClientsArr});
 
     if (this.state.filter) {
@@ -117,10 +115,8 @@ class MobileCompany extends React.PureComponent{
           index = i;
         }
       });
-      const newFilteredClientsArr = [
-        ...this.state.filteredClients.slice(0, index),
-        ...this.state.filteredClients.slice(index+1)
-      ];
+      const newFilteredClientsArr = this.state.filteredClients.slice();
+      newFilteredClientsArr.splice(index, 1);
       this.setState({filteredClients: newFilteredClientsArr});
     }
   };
