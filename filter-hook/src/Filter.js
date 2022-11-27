@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import Controls from "./Controls";
@@ -12,16 +12,13 @@ function Filter( {wordList} ) {
   const [filterText, setFilterText] = useState("");
 
   const switchSort = (state) => setIsSort(state);
-  const memoizedSwitchSort = useCallback(switchSort, []);
 
   const changeFilterText = (text) => setFilterText(text);
-  const memoizedChangeFilterText = useCallback(changeFilterText, []);
 
   const clearAll = () => {
     setIsSort(false);
     setFilterText("");
-  }
-  const memoizedClearAll = useCallback(clearAll, []);
+  };
 
   useEffect( () => {
     let words;
@@ -45,10 +42,10 @@ function Filter( {wordList} ) {
     <div className="filter-block">
       <Controls
         sort={isSort}
-        cbSwitchSort={memoizedSwitchSort}
+        cbSwitchSort={switchSort}
         currentFilterText={filterText}
-        cbChangeFilterText={memoizedChangeFilterText}
-        cbClearAll={memoizedClearAll}
+        cbChangeFilterText={changeFilterText}
+        cbClearAll={clearAll}
       />
       <List
         wordList={currentList}
