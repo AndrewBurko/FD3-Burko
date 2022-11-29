@@ -1,0 +1,33 @@
+[
+  {
+    "firstName": "Андрей",
+    "lastName": "Бурко",
+    "fatherName": "Васильевич",
+    "balance": 200,
+    "id": 1
+  },
+
+  {
+    "firstName": "Александр",
+    "lastName": "Башура",
+    "fatherName": "Леонидович",
+    "balance": 250,
+    "id": 2
+  },
+
+  {
+    "firstName": "Екатерина",
+    "lastName": "Аверкова",
+    "fatherName": "Валентиновна",
+    "balance": 180,
+    "id": 3
+  },
+
+  {
+    "firstName": "Светлана",
+    "lastName": "Маленок",
+    "fatherName": "Николаевна",
+    "balance": -220,
+    "id": 4
+  }
+]
