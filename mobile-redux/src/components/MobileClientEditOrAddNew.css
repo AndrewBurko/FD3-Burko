@@ -1,0 +1,35 @@
+.client-card {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px grey;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  color: #009688;
+  margin: 15px 0px;
+  font-size: 20px;
+}
+
+label {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+input[type=text] {
+  position: absolute;
+  right: 5px;
+  width: 180px;
+}
+
+.client-card-savebtn,
+.client-card-cancelbtn {
+  margin: 10px 0px 0px;
+  height: 25px;
+  width: 200px;
+  align-self: center;
+}

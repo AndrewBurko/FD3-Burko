@@ -1,0 +1,25 @@
+hr {
+  margin: 14px 0px;
+  border: none;
+  background-color: rgb(219, 219, 219);
+  height: 1px;
+}
+
+.mobile-company-block {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  padding: 0px 10px;
+}
+
+.mobilecompany-addclient-btn {
+  margin: 20px 0px;
+}

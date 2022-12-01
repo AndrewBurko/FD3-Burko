@@ -1,13 +1,15 @@
 import React from "react";
+import { Provider } from "react-redux";
 
-import MobileCompany from "./MobileCompany";
-import clientsArr from "./clientsArr.json";
+import { store } from "./redux/store";
+
+import MobileCompany from "./components/MobileCompany";
 
 function App() {
   return (
-    <MobileCompany
-      clientsArr={clientsArr}
-    />
+    <Provider store={store}>
+      <MobileCompany />
+    </Provider>
   );
 }
 
