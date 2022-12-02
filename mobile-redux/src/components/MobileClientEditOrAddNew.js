@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 import "./MobileClientEditOrAddNew.css";
@@ -11,10 +11,10 @@ function MobileClientEditOrAddNew(props) {
   const [balance, setBalance] = useState(props.workMode === 1 ? props.client.balance : "");
   const [id, setId] = useState(props.workMode === 1 ? props.client.id : props.lastClientId+1);
 
-  const lastNameRef = React.createRef();
-  const firstNameRef = React.createRef();
-  const fatherNameRef = React.createRef();
-  const balanceRef = React.createRef();
+  const lastNameRef = useRef(null);
+  const firstNameRef = useRef(null);
+  const fatherNameRef = useRef(null);
+  const balanceRef = useRef(null);
 
    function saveClient() {
     if (props.workMode === 2) {

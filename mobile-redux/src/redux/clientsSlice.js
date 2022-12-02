@@ -12,12 +12,7 @@ export const clientsSlice = createSlice({
   reducers: {
 
     delClient: (state, action) => {
-      let index;
-      state.clients.forEach( (v, i) => {
-        if (v.id === action.payload) {
-          index = i;
-        }
-      });
+      const index = state.clients.findIndex( (v) => v.id === action.payload);
       state.clients.splice(index, 1);
     },
 
@@ -26,12 +21,7 @@ export const clientsSlice = createSlice({
     },
 
     changeClient: (state, action) => {
-      let index;
-      state.clients.forEach( (v, i) => {
-        if (v.id === action.payload.currentClientId) {
-          index = i;
-        }
-      });
+      const index = state.clients.findIndex( (v) => v.id === action.payload.currentClientId);
       state.clients[index] = {...state.clients[index], ...action.payload.newClientData};
     },
   },

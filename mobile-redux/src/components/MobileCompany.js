@@ -30,13 +30,8 @@ function MobileCompany() {
     dispatch(delClient(id));
     setWorkMode(0);
 
-    let index;
     if (filter) {
-      filteredClients.forEach( (v, i) => {
-        if (v.id === id) {
-          index = i;
-        }
-      });
+      const index = filteredClients.findIndex( (v) => v.id === id);
       const newFilteredClientsArr = filteredClients.slice();
       newFilteredClientsArr.splice(index, 1);
       setFilteredClients(newFilteredClientsArr);
@@ -72,13 +67,8 @@ function MobileCompany() {
     dispatch(changeClient({newClientData: obj, currentClientId: id}));
     setWorkMode(0);
 
-    let index;
     if (filter) {
-      filteredClients.forEach( (v, i) => {
-        if (v.id === id) {
-          index = i;
-        }
-      })
+      const index = filteredClients.findIndex( (v) => v.id === id);
       const editedFilteredClientsList = [
         ...filteredClients.slice(0, index),
         {...filteredClients[index], ...obj},
@@ -187,6 +177,6 @@ function MobileCompany() {
   [clients, workMode, currentClient, filter]
   );
   return memoizeedRenderResult;
-}
+  }
 
 export default MobileCompany;
