@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../public/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../public/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../public/fonts/Gilroy-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../public/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zing Rust Demo Base";
+  src: url("../public/fonts/Zing\ Rust\ Demo\ Base.woff2");
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #403C3B;
+  font-family: Gilroy, sans-serif;
+}
