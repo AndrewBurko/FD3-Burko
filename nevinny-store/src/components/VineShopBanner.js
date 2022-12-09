@@ -2,6 +2,8 @@ import React from "react";
 
 import "./VineShopBanner.css";
 
+console.log("VineShopBanner is rendering");
+
 function VineShopBanner() {
   return (
     <div className="banner-block">
