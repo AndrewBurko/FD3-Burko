@@ -3,27 +3,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { store } from "./redux/store";
-
 import VineShop from "./components/VineShop";
 
-
-/* Это нужно для загрузки информации в БД
-
-{
-  "name": "",
-  "id": "",
-  "img-small": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B-small.jpg",
-  "img-big": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B-big.jpg",
-  "raiting": ,
-  "color": "",
-  "sugar": "",
-  "region": "",
-  "production": "",
-  "alcohol": ,
-  "volume": ,
-  "grape-sort": "",
-  "price": 
-},
+//Это нужно для загрузки информации в БД
 
 import database from "./firebase-config";
 import { ref, set } from "firebase/database";
@@ -34,7 +16,7 @@ function writeUserData(obj) {
 };
 writeUserData(vines);
 
-конец */
+//конец
 
 function App() {
   return (

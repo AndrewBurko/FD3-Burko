@@ -32,7 +32,7 @@
 
 .banner-title-shadow-text {
   position: absolute;
-  left: -1.97%;
+  left: -0.97%;
   top: 4.08%;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.2px #ffffff;
@@ -117,10 +117,12 @@
 
   .banner-title-text {
     font-size: 28px;
+    width: 400px;
   }
 
   .banner-title-shadow-text {
-    left: 126px;
+    left: -2px;
+    width: 400px;
   }
 
   .banner-slogan-shadow-block {
@@ -144,5 +146,23 @@
 @media (max-width: 400px) {
   .banner-shadow-block {
     background: none;
+  }
+
+  .banner-text-wrap {
+    width: 300px;
+  }
+
+  .banner-title-text {
+    width: 290px;
+  }
+
+  .banner-title-shadow-text {
+    width: 290px;
+    left: -3px;
+  }
+
+  .banner-slogan-shadow-block {
+    left: 68px;
+    top: 234px;
   }
 }

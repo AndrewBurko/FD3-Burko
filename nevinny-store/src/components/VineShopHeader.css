@@ -86,18 +86,22 @@ header {
 
 .header-basket-stiker {
   border-radius: 50%;
-  background-color: #ffffff;
-  width: 15px;
-  height: 15px;
+  background-color: #d50000;
+  width: 18px;
+  height: 18px;
   font-size: 12px;
-  color: #72A479;
+  color: white;
   position: absolute;
-  top: -6px;
+  top: -7px;
   display: flex;
   justify-content: center;
   align-items: center;
-  right: -7px;
+  right: -9px;
   font-weight: 700;
+}
+
+.header-basket-stiker_hidden {
+  display: none;
 }
 
 @media (max-width: 900px) {

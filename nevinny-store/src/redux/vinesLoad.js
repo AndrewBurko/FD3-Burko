@@ -18,8 +18,9 @@ export async function vinesLoad(dispatch) {
         console.error("No data");
       }
     })
-    .catch((error) => {
-      dispatch(updateLoadState({state: 3, error: error}));
-      console.error(error);
+    .catch((err) => {
+      dispatch(updateLoadState({state: 3, error: err.message}));
+      console.error(err);
     }
-    )};
+    )
+};

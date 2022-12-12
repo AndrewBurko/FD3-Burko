@@ -4,6 +4,7 @@ const initialState = {
   dataLoadState: 0, //0 - not loaded, 1 - is loading, 2 - loaded, 3 - error
   dataLoadError: null,
   data: null,
+  cart: [],
 };
 
 export const vinesSlice = createSlice({
@@ -19,8 +20,26 @@ export const vinesSlice = createSlice({
     updateData: (state, action) => {
       state.data = action.payload;
     },
+
+    addItemToCart: (state, action) => {
+      state.cart.push(action.payload);
+    },
+
+    changeItemAmount: (state, action) => {
+      state.cart.forEach( v => {
+        if (v.item.id === action.payload.currentItemId) {
+          v.amount = action.payload.currentAmount;
+        }
+      });
+    },
+
+    deleteItemFromCart: (state, action) => {
+      const index = state.cart.findIndex( v => v.item.id === action.payload);
+      state.cart.splice(index, 1);
+    },
+
   },
 });
 
-export const { updateLoadState, updateData } = vinesSlice.actions;
+export const { updateLoadState, updateData, addItemToCart, changeItemAmount, deleteItemFromCart } = vinesSlice.actions;
 export default vinesSlice.reducer;
