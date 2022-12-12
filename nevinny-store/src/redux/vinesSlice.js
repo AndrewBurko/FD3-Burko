@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   dataLoadState: 0, //0 - not loaded, 1 - is loading, 2 - loaded, 3 - error
   dataLoadError: null,
+  initialData: null,
   data: null,
   cart: [],
 };
@@ -18,7 +19,8 @@ export const vinesSlice = createSlice({
     },
 
     updateData: (state, action) => {
-      state.data = action.payload;
+      state.initialData = action.payload;
+      state.data = [...state.initialData];
     },
 
     addItemToCart: (state, action) => {

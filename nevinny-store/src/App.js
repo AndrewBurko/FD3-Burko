@@ -3,26 +3,26 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { store } from "./redux/store";
-import VineShop from "./components/VineShop";
+import VineShopHeader from "./components/VineShopHeader";
+import PagesRouter from "./routes/PagesRouter";
 
 //Это нужно для загрузки информации в БД
-
 import database from "./firebase-config";
 import { ref, set } from "firebase/database";
 import vines from "./items.json";
 
-function writeUserData(obj) {
+function writeVinesData(obj) {
   set(ref(database, 'vines/'), obj);
 };
-writeUserData(vines);
-
+writeVinesData(vines);
 //конец
 
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <VineShop />
+        <VineShopHeader />
+        <PagesRouter />
       </Provider>
     </BrowserRouter>
   );

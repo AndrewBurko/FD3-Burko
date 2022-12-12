@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
+
+import VineShopBanner from "../components/VineShopBanner";
+import PagesLinks from "../components/PagesLinks";
+import VineShop from "../components/VineShop";
 
 export const PageMain = () => {
   return (
-    <h1>Это основная страница приложения</h1>
+    <Fragment>
+      <VineShopBanner />
+      <PagesLinks />
+      <VineShop />
+    </Fragment>
   );
 }
