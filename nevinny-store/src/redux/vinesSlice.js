@@ -40,8 +40,16 @@ export const vinesSlice = createSlice({
       state.cart.splice(index, 1);
     },
 
+    clearCart: (state, action) => {
+      state.cart = [];
+    },
+
+    updateCart: (state, action) => {
+      state.cart = action.payload;
+    },
+
   },
 });
 
-export const { updateLoadState, updateData, addItemToCart, changeItemAmount, deleteItemFromCart } = vinesSlice.actions;
+export const { updateLoadState, updateData, addItemToCart, changeItemAmount, deleteItemFromCart, clearCart, updateCart } = vinesSlice.actions;
 export default vinesSlice.reducer;

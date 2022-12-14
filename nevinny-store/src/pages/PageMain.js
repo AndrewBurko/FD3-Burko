@@ -8,7 +8,7 @@ export const PageMain = () => {
   return (
     <Fragment>
       <VineShopBanner />
-      <PagesLinks />
+      {/* <PagesLinks /> */}
       <VineShop />
     </Fragment>
   );

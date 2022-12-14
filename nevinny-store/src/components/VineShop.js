@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { vinesLoad } from "../redux/vinesLoad";
 import VineItem from "./VineItem";
+import { updateCart } from "../redux/vinesSlice";
 
 import "./VineShop.css";
 
@@ -24,6 +25,21 @@ function VineShop() {
       />
     );
   };
+
+  // обрабатываем событие перед перезагрузкой страницы или закрытии вкладки
+  window.addEventListener("beforeunload", saveCartToLocalStorage);
+
+  function saveCartToLocalStorage() {
+    localStorage.setItem("nevinnyShopCartData", JSON.stringify(vines.cart));
+  };
+
+  // если LocalStorage не пустой сохраняем информацию в корзину
+  useEffect( () => {
+    if (localStorage.getItem("nevinnyShopCartData")) {
+      const cartFromLocalStorage = JSON.parse(localStorage.getItem("nevinnyShopCartData"))
+      dispatch(updateCart(cartFromLocalStorage));
+    }
+  },[]);
 
   console.log("VineShop is Rendering");
 

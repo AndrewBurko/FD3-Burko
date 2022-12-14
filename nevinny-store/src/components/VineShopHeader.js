@@ -47,7 +47,7 @@ function VineShopHeader() {
           <a className="header-contacts-phone" href="tel: +375291111111">+375 (29) 111-11-11</a>
         </div>
 
-        <NavLink to="/basket" className="header-basket-link">
+        <NavLink to="/cart" className="header-basket-link">
           <div className="header-basket-block">
             <div className="header-basket-text">
               Корзина
