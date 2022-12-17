@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { clearCart } from "../redux/vinesSlice";
+import { clearCart } from "../redux/winesSlice";
 
 import "./CartResultBlock.css";
 
 function CartResultBlock() {
 
-  const cartItems = useSelector(state => state.vines.cart);
+  const cartItems = useSelector(state => state.wines.cart);
   const dispatch = useDispatch();
 
   const minOrder = 50;
@@ -65,7 +65,6 @@ function CartResultBlock() {
           <NavLink to="/" className="cart-result-empty-link">Выбрать вино</NavLink>
         </div>
       }
-
     </div>
   );
 }

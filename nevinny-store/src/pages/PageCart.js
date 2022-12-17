@@ -1,8 +1,8 @@
 import React from "react";
-import VineCart from "../components/VineCart";
+import WineCart from "../components/WineCart";
 
 export const PageCart = () => {
   return (
-    <VineCart />
+    <WineCart />
   );
 }

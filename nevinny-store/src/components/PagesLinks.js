@@ -1,25 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import "./PageLinks.css";
+import "./PagesLinks.css";
 
 function PagesLinks() {
 
   function getLinkClass(obj) {
     let className = "page-link";
     if (obj.isActive) {
-      className += " page-link-activ";
+      className += " page-link_activ";
     }
     return className;
   };
 
   return (
     <div className="pages-links-block">
-      <NavLink to="/" end className={getLinkClass}>Все</NavLink>
-      <NavLink to="/items-page1" className={getLinkClass}>1</NavLink>
-      <NavLink to="/items-page2" className={getLinkClass}>2</NavLink>
-      <NavLink to="/items-page3" className={getLinkClass}>3</NavLink>
-      <NavLink to="/items-page4" className={getLinkClass}>4</NavLink>
+      <NavLink to="/" end className={getLinkClass}>Все вина</NavLink>
+      <NavLink to="/italy" className={getLinkClass}>Вина Италии</NavLink>
+      <NavLink to="/spain" className={getLinkClass}>Вина Испании</NavLink>
+      <NavLink to="/france" className={getLinkClass}>Вина Франции</NavLink>
+      <NavLink to="/new-world" className={getLinkClass}>Вина Нового Света</NavLink>
     </div>
   );
 }

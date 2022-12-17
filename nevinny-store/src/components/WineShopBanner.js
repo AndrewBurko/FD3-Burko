@@ -1,10 +1,8 @@
 import React from "react";
 
-import "./VineShopBanner.css";
+import "./WineShopBanner.css";
 
-console.log("VineShopBanner is rendering");
-
-function VineShopBanner() {
+function WineShopBanner() {
   return (
     <div className="banner-block">
       <div className="banner-shadow-block">
@@ -27,4 +25,4 @@ function VineShopBanner() {
   );
 }
 
-export default VineShopBanner;
+export default WineShopBanner;

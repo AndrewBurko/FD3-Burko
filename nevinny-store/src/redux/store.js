@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import vinesReducer from "./vinesSlice";
+import winesReducer from "./winesSlice";
 
 export const store = configureStore({
   reducer: {
-    vines: vinesReducer,
+    wines: winesReducer,
   },
 });

@@ -134,8 +134,8 @@
   background-color: #72A479;
   border: none;
   border-radius: 50%;
-  background-position-x: 50.5px;
-  background-position-y: -23px;
+  background-position-x: 51px;
+  background-position-y: -22.5px;
 }
 
 @media(max-width: 750px) {
@@ -216,4 +216,14 @@
   .cart-item-price-block {
     font-size: 15px;
   }
+}
+
+@keyframes deletion {
+  0% {left: 0px;}
+  100% {left: -1200px;}
+}
+
+.deleted-item {
+  position: relative;
+  animation: deletion 700ms;
 }

@@ -125,6 +125,7 @@ function MobileCompany() {
 
   const memoizeedRenderResult = useMemo( () => {
     console.log("MobileCompany was rendering");
+    console.log(typeof(clientsCode));
 
     return (
       <div className="mobile-company-block">

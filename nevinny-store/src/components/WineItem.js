@@ -2,15 +2,16 @@ import React, { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./VineItem.css";
-import { addItemToCart, changeItemAmount, deleteItemFromCart } from "../redux/vinesSlice";
+import { addItemToCart, changeItemAmount, deleteItemFromCart } from "../redux/winesSlice";
 
-function VineItem( {item} ) {
+import "./WineItem.css";
+
+function WineItem( {item} ) {
 
   const [itemAmount, setItemAmount] = useState(0);
   const [currentPrice, setCurrentPrice] = useState(null);
 
-  const itemsInCart = useSelector(state => state.vines.cart);
+  const itemsInCart = useSelector(state => state.wines.cart);
   const dispatch = useDispatch();
 
   useEffect( () => {
@@ -27,26 +28,25 @@ function VineItem( {item} ) {
   function productSelected() {
     const itemInCart = {
       item: item,
-      amount: 1.
+      amount: 1,
     };
     dispatch(addItemToCart(itemInCart));
   };
 
   function increaseItemAmount() {
     const amount = itemAmount + 1;
-    dispatch(changeItemAmount({currentItemId: item.id, currentAmount: amount}));
+    dispatch(changeItemAmount( {currentItemId: item.id, currentAmount: amount} ));
   };
 
   function decreaseItemAmount() {
     const amount = itemAmount - 1;
-    dispatch(changeItemAmount({currentItemId: item.id, currentAmount: amount}));
+    dispatch(changeItemAmount( {currentItemId: item.id, currentAmount: amount} ));
     if (amount === 0) {
       dispatch(deleteItemFromCart(item.id));
     }
   };
 
   const memoizeedRenderResult = useMemo( () => {
-    console.log("VineItem " + item.name + " is rendering");
 
     return (
       <div className="item-card">
@@ -102,7 +102,7 @@ function VineItem( {item} ) {
   return memoizeedRenderResult;
 }
 
-VineItem.propTypes = {
+WineItem.propTypes = {
   item: PropTypes.shape({
     alcohol: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
@@ -120,4 +120,4 @@ VineItem.propTypes = {
   }),
 };
 
-export default VineItem;
+export default WineItem;

@@ -12,7 +12,9 @@ header {
   line-height: 25px;
   letter-spacing: 0.15em;
   color: #FFFFFF;
-  margin: 30px 0px 30px 98px;
+  margin: 25px 0px 25px 98px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .header-contacts-block {
@@ -49,13 +51,13 @@ header {
   text-decoration: none;
 }
 
-.header-basket-link {
+.header-cart-link {
   text-decoration: none;
 }
 
-.header-basket-block {
+.header-cart-block {
   width: 149px;
-  height: 52px;
+  height: 49px;
   background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
   border-radius: 10px;
   display: flex;
@@ -64,7 +66,11 @@ header {
   margin: 0px 70px 0px 0px;
 }
 
-.header-basket-text {
+.header-cart-block:hover {
+  box-shadow: 0px 0px 10px rgba(114, 163, 121, 0.7);
+}
+
+.header-cart-text {
   font-weight: 600;
   font-size: 14px;
   color: #FFFFFF;
@@ -73,18 +79,18 @@ header {
   top: -2px;
 }
 
-.header-basket-line {
+.header-cart-line {
   width: 0px;
   height: 38px;
   border-left: 1px solid #CFCFCF;
 }
 
-.header-basket-icon {
+.header-cart-icon {
   margin: 0px 0px 0px 12px;
   position: relative;
 }
 
-.header-basket-stiker {
+.header-cart-sticker {
   border-radius: 50%;
   background-color: #d50000;
   width: 18px;
@@ -100,7 +106,7 @@ header {
   font-weight: 700;
 }
 
-.header-basket-stiker_hidden {
+.header-cart-sticker_hidden {
   display: none;
 }
 
@@ -113,7 +119,7 @@ header {
     margin-left: 0px;
   }
 
-  .header-basket-block {
+  .header-cart-block {
     margin-right: 0px;
   }
 }
@@ -125,20 +131,20 @@ header {
 }
 
 @media (max-width: 360px) {
-  .header-basket-block {
+  .header-cart-block {
     width: 62px;
     height: 56px;
     flex-direction: column-reverse;
   }
 
-  .header-basket-text {
+  .header-cart-text {
     text-transform: lowercase;
     font-size: 12px;
     top: 1px;
     margin: 0px;
   }
 
-  .header-basket-line {
+  .header-cart-line {
     height: 0px;
     border-top: 1px solid #CFCFCF;
     width: 48px;
@@ -146,7 +152,7 @@ header {
     top: 2px;
   }
 
-  .header-basket-icon {
+  .header-cart-icon {
     margin: 0px;
     position: relative;
     top: 4px;

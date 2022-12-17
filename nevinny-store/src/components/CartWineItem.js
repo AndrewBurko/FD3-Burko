@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
-import { changeItemAmount, deleteItemFromCart } from "../redux/vinesSlice";
+import { changeItemAmount, deleteItemFromCart } from "../redux/winesSlice";
 
-import "./CartVineItem.css";
+import "./CartWineItem.css";
 
-function CartVineItem({ amount, item }) {
+function CartWineItem( {amount, item} ) {
 
   const [currentPrice, setCurrentPrice] = useState(amount * item.price);
 
@@ -15,21 +15,24 @@ function CartVineItem({ amount, item }) {
   function increaseAmount() {
     const newAmount = amount + 1;
     setCurrentPrice(newAmount * item.price);
-    dispatch(changeItemAmount({currentItemId: item.id, currentAmount: newAmount}));
+    dispatch(changeItemAmount( {currentItemId: item.id, currentAmount: newAmount} ));
   };
 
-  function decreaseAmount() {
+  function decreaseAmount(event) {
     const newAmount = amount - 1;
     if (newAmount > 0) {
       setCurrentPrice(newAmount * item.price);
-      dispatch(changeItemAmount({currentItemId: item.id, currentAmount: newAmount}));
+      dispatch(changeItemAmount( {currentItemId: item.id, currentAmount: newAmount} ));
     } else {
-      deleteItem();
+      deleteItem(event);
     }
   };
 
-  function deleteItem() {
-    dispatch(deleteItemFromCart(item.id));
+  function deleteItem(event) {
+    event.nativeEvent.path[4].classList.add("deleted-item");
+    setTimeout( () => {
+      dispatch(deleteItemFromCart(item.id));
+    }, 500);
   };
 
   return(
@@ -61,7 +64,7 @@ function CartVineItem({ amount, item }) {
   );
 }
 
-CartVineItem.propTypes = {
+CartWineItem.propTypes = {
   amount: PropTypes.number.isRequired,
   item: PropTypes.shape({
     alcohol: PropTypes.number.isRequired,
@@ -80,4 +83,4 @@ CartVineItem.propTypes = {
   }),
 };
 
-export default CartVineItem;
+export default CartWineItem;

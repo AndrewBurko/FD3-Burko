@@ -2,13 +2,13 @@ import React, { useMemo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import "./VineShopHeader.css";
+import "./WineShopHeader.css";
 
-function VineShopHeader() {
+function WineShopHeader() {
 
   const [itemsAmount, setItemsAmount] = useState(0);
 
-  const itemsInCart = useSelector(state => state.vines.cart);
+  const itemsInCart = useSelector(state => state.wines.cart);
 
   const amount = itemsInCart.reduce( (r, v) => r + v.amount, 0);
   if (itemsAmount !== amount) {
@@ -16,13 +16,10 @@ function VineShopHeader() {
   };
 
   const memoizeedRenderResult = useMemo( () => {
-    console.log("VineShopHeader is rendering");
 
     return (
       <header>
-        <div className="header-title">
-          НЕВИННЫЙ
-        </div>
+        <NavLink to="/" className="header-title">Невинный</NavLink>
 
         <div className="header-contacts-block">
           <div className="header-contacts-icon-block">
@@ -47,13 +44,13 @@ function VineShopHeader() {
           <a className="header-contacts-phone" href="tel: +375291111111">+375 (29) 111-11-11</a>
         </div>
 
-        <NavLink to="/cart" className="header-basket-link">
-          <div className="header-basket-block">
-            <div className="header-basket-text">
+        <NavLink to="/cart" className="header-cart-link">
+          <div className="header-cart-block">
+            <div className="header-cart-text">
               Корзина
             </div>
-            <div className="header-basket-line"></div>
-            <div className="header-basket-icon">
+            <div className="header-cart-line"></div>
+            <div className="header-cart-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M7.42245 19.8203C7.84445 19.8203 8.18745 20.1633 8.18745 20.5853C8.18745 
                 21.0073 7.84445 21.3493 7.42245 21.3493C7.00045 21.3493 6.65845 21.0073 6.65845 20.5853C6.65845 20.1633 7.00045 19.8203 
@@ -66,7 +63,7 @@ function VineShopHeader() {
                 strokeLinejoin="round"/>
                 <path d="M14.1255 10.795H16.8985" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <div className={itemsAmount > 0 ? "header-basket-stiker" : "header-basket-stiker_hidden"}>
+              <div className={itemsAmount > 0 ? "header-cart-sticker" : "header-cart-sticker_hidden"}>
                 {itemsAmount}
               </div>
             </div>
@@ -80,4 +77,4 @@ function VineShopHeader() {
   return memoizeedRenderResult;
 }
 
-export default VineShopHeader;
+export default WineShopHeader;

@@ -37,3 +37,16 @@ body {
   background-color: #403C3B;
   font-family: Gilroy, sans-serif;
 }
+
+.main-items-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.main-inf-text {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 50px;
+}

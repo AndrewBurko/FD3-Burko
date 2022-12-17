@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import CartVineItem from "./CartVineItem";
+import CartWineItem from "./CartWineItem";
 import CartResultBlock from "./CartResultBlock";
 
-import "./VineCart.css";
+import "./WineCart.css";
 
-function VineCart() {
+function WineCart() {
 
   const [itemsAmount, setItemsAmount] = useState(0);
 
-  const itemsInCart = useSelector(state => state.vines.cart);
+  const itemsInCart = useSelector(state => state.wines.cart);
 
   const amount = itemsInCart.reduce( (r, v) => r + v.amount, 0);
   if (itemsAmount !== amount) {
@@ -21,7 +21,7 @@ function VineCart() {
   let cartItemsCode;
   if (itemsInCart.length > 0) {
     cartItemsCode = itemsInCart.map( v =>
-      <CartVineItem
+      <CartWineItem
         key={v.item.id}
         amount={v.amount}
         item={v.item}
@@ -30,7 +30,7 @@ function VineCart() {
   };
 
   return (
-    <div>
+    <Fragment>
       <div className="cart-header">
         <NavLink to="/" className="cart-link">&#65124; к выбору вина</NavLink>
         <div className="cart-decoration-block"></div>
@@ -43,8 +43,8 @@ function VineCart() {
       </div>
 
       <CartResultBlock />
-    </div>
+    </Fragment>
   );
 }
 
-export default VineCart;
+export default WineCart;

@@ -8,8 +8,8 @@ const initialState = {
   cart: [],
 };
 
-export const vinesSlice = createSlice({
-  name: "vines",
+export const winesSlice = createSlice({
+  name: "wines",
   initialState,
   reducers: {
 
@@ -20,7 +20,7 @@ export const vinesSlice = createSlice({
 
     updateData: (state, action) => {
       state.initialData = action.payload;
-      state.data = [...state.initialData];
+      state.data = action.payload;
     },
 
     addItemToCart: (state, action) => {
@@ -48,8 +48,13 @@ export const vinesSlice = createSlice({
       state.cart = action.payload;
     },
 
+    setPageWines: (state, action) => {
+      state.data = action.payload;
+    },
   },
 });
 
-export const { updateLoadState, updateData, addItemToCart, changeItemAmount, deleteItemFromCart, clearCart, updateCart } = vinesSlice.actions;
-export default vinesSlice.reducer;
+export const { updateLoadState, updateData, addItemToCart, changeItemAmount, deleteItemFromCart, clearCart, updateCart, 
+  setPageWines } = winesSlice.actions;
+
+export default winesSlice.reducer;

@@ -3,26 +3,24 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { store } from "./redux/store";
-import VineShopHeader from "./components/VineShopHeader";
-import PagesRouter from "./routes/PagesRouter";
+import WineShop from "./components/WineShop";
 
-//Это нужно для загрузки информации в БД
+//this code use for upload info from json-file to Firebase database
 import database from "./firebase-config";
 import { ref, set } from "firebase/database";
-import vines from "./items.json";
+import wines from "./items.json";
 
-function writeVinesData(obj) {
-  set(ref(database, 'vines/'), obj);
+function uploadWinesData(obj) {
+  set(ref(database, 'wines/'), obj);
 };
-writeVinesData(vines);
-//конец
+uploadWinesData(wines);
+//end
 
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <VineShopHeader />
-        <PagesRouter />
+        <WineShop />
       </Provider>
     </BrowserRouter>
   );

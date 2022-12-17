@@ -941,5 +941,85 @@
     "volume": 0.75,
     "grapeSort": ["Примитиво: 100%"],
     "price": 23.66
+  },
+
+  {
+    "name": "\"Ozzy\" Moscato",
+    "id": "в150041",
+    "imgSmall": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2150041-small.jpg",
+    "imgBig": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2150041-big.jpg",
+    "raiting": 7.4,
+    "type": "Белое",
+    "sugar": "Сладкое",
+    "region": ["Австралия", "Южная Австралия"],
+    "production": "Salena Estate",
+    "alcohol": 8.0,
+    "volume": 0.75,
+    "grapeSort": ["Мускат: 100%"],
+    "price": 18.33
+  },
+
+  {
+    "name": "Val de Vie, \"Barista\" Pinotage",
+    "id": "в38744",
+    "imgSmall": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B238744-small.jpg",
+    "imgBig": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B238744-big.jpg",
+    "raiting": 8.0,
+    "type": "Красное",
+    "sugar": "Сухое",
+    "region": ["ЮАР", "Паарл"],
+    "production": "Val de Vie",
+    "alcohol": 13.5,
+    "volume": 0.75,
+    "grapeSort": ["Пинотаж: 100%"],
+    "price": 17.81
+  },
+
+  {
+    "name": "Marc Bredif, Vouvray AOC, 2021",
+    "id": "в192612",
+    "imgSmall": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2192612-small.jpg",
+    "imgBig": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2192612-big.jpg",
+    "raiting": 8.7,
+    "type": "Белое",
+    "sugar": "Полусухое",
+    "region": ["Франция", "Долина Луары", "Вувре"],
+    "production": "Marc Bredif",
+    "alcohol": 12.5,
+    "volume": 0.75,
+    "grapeSort": ["Шенен Блан: 100%"],
+    "price": 49.62
+  },
+
+  {
+    "name": "\"Sierra Los Santos\" Tinto Semidulce",
+    "id": "в141130",
+    "imgSmall": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2141130-small.jpg",
+    "imgBig": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2141130-big.jpg",
+    "raiting": 10.0,
+    "type": "Красное",
+    "sugar": "Полусладкое",
+    "region": ["Испания", "Вальдепеньяс"],
+    "production": "Bodegas Navalon",
+    "alcohol": 10.0,
+    "volume": 0.75,
+    "grapeSort": ["Красные сорта винограда: 100%"],
+    "price": 8.19
+  },
+
+  {
+    "name": "\"Marchesa Vincenza Stanga\" Gran Dessert",
+    "id": "в180751",
+    "imgSmall": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2180751-small.jpg",
+    "imgBig": "https://github.com/AndrewBurko/FD3-Burko/raw/main/nevinny-store-images/%D0%B2180751-big.jpg",
+    "raiting": 6.9,
+    "type": "Белое",
+    "sugar": "Сладкое",
+    "region": ["Италия"],
+    "production": "Caldirola",
+    "alcohol": 9.5,
+    "volume": 0.75,
+    "grapeSort": ["Треббьяно", "Гарганега", "Мускат"],
+    "price": 10.27
   }
 ]
