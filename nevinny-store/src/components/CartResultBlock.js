@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { ref, set } from "firebase/database";
 
 import { clearCart } from "../redux/winesSlice";
+import database from "../firebase-config";
 
 import "./CartResultBlock.css";
 
@@ -25,13 +27,18 @@ function CartResultBlock() {
   },[cartItems]);
 
   function sendOrder() {
+    uploadOrderToServer();
     dispatch(clearCart());
     setTotalAmount(0);
     setFreeDeliveryAmount(0);
     setSendedOrder(true);
   };
 
-  return(
+  async function uploadOrderToServer() {
+    set(ref(database, 'order/'), cartItems);
+  };
+
+  return (
     <div className="cart-result-wrap">
       <div className="cart-result-decorate-line"></div>
       { (cartItems.length !== 0) &&
