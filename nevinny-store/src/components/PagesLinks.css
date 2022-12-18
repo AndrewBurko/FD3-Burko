@@ -22,6 +22,10 @@
   font-weight: 500;
 }
 
+.page-link:hover {
+  color: #FFFFFF;
+}
+
 @media(max-width: 650px) {
   .pages-links-block {
     flex-direction: column;

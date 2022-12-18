@@ -27,15 +27,22 @@ function CartResultBlock() {
   },[cartItems]);
 
   function sendOrder() {
-    uploadOrderToServer();
+    const order = cartItems.map( v =>
+      ({
+        name: v.item.name, 
+        id: v.item.id,
+        amount: v.amount,
+      }));
+    uploadOrderToServer(order);
     dispatch(clearCart());
     setTotalAmount(0);
     setFreeDeliveryAmount(0);
     setSendedOrder(true);
   };
 
-  async function uploadOrderToServer() {
-    set(ref(database, 'order/'), cartItems);
+  async function uploadOrderToServer(order) {
+    const id = new Date();
+    set(ref(database, 'orders/' + id), order);
   };
 
   return (

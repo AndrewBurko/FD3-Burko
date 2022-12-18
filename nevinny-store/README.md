@@ -9,5 +9,5 @@ For run this app:
 For run tests in this app:
 ### `npm test`
 
-For Build the app for production
+For build the app for production
 ### `npm run build`

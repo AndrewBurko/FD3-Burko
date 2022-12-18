@@ -13,7 +13,7 @@ function WinePaginator( {winesPerPage, totalWines, cbPaginate, currentPage} ) {
 
   function setPage(event) {
     event.preventDefault();
-    cbPaginate(event.target.innerText);
+    cbPaginate(Number(event.target.innerText));
   };
 
   const paginatorCode = pageNumbers.map( number => (

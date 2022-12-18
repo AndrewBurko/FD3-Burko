@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import CartWineItem from "./CartWineItem";
 import CartResultBlock from "./CartResultBlock";
+import PagesLinks from "./PagesLinks";
 
 import "./WineCart.css";
 
@@ -31,6 +32,8 @@ function WineCart() {
 
   return (
     <Fragment>
+      <PagesLinks />
+
       <div className="cart-header">
         <NavLink to="/" className="cart-link">&#65124; к выбору вина</NavLink>
         <div className="cart-decoration-block"></div>
